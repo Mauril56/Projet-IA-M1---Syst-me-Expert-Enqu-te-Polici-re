@@ -1,56 +1,26 @@
-# 🚀 Système d'Enquête Policière en Prolog
+# 🕵️ Système Expert IA - Enquête Criminelle
 
-## 📋 Description
-Système expert d'enquête policière utilisant la programmation logique Prolog pour déterminer la culpabilité des suspects.
+Un système expert intelligent pour l'analyse d'enquêtes criminelles, développé en Prolog avec interfaces Web et CLI.
 
-## 🛠️ Installation
-```bash
-sudo apt install swi-prolog
-git clone [votre-repo]
-cd projet-ia-enquete
+## 🌟 Fonctionnalités
 
+### 🔍 Analyse Criminelle
+- **Détection de culpabilité** basée sur des règles métier
+- **Arbre de preuves** expliquant les raisonnements
+- **Scénarios hypothétiques** pour tester différentes configurations
+- **Résolution de conflits** entre preuves contradictoires
 
-## 🚀 Lancement du Projet
+### 👥 Gestion des Suspects
+- Base de données dynamique de suspects
 
-```bash
-# Rendre les scripts exécutables
-chmod +x scripts/*.sh
+### 📊 Interfaces
+- **Interface Web** interactive (Streamlit)
+- **Interface CLI** pour usage avancé
 
-# Lancer l'interface CLI
-./scripts/start_cli.sh
-
-# Ou lancer l'interface web
+Lancement :
+interface web
 ./scripts/start_web.sh
 
+cli
 
-# Fonctionnalités IA Avancées
-
-## 🧠 Système d'Explication
-- Explications détaillées des verdicts
-- Liste des preuves retenues/manquantes
-- Niveau de certitude calculé
-
-## 📊 Logique Floue
-- Certitude numérique (0-100%)
-- Poids différents pour chaque preuve
-- Seuil de culpabilité ajustable
-
-## 🤔 Raisonnement Hypothétique
-- Scénarios "what-if"
-- Ajout temporaire de preuves
-- Simulation sans affecter la base
-
-## 🌳 Arbre de Preuves
-- Visualisation hiérarchique
-- Preuves présentes/absentes
-- Structure arborescente
-
-## 🤖 Apprentissage Automatique
-- Patterns appris des cas précédents
-- Historique des décisions
-- Amélioration progressive
-
-## ⚡ Résolution de Conflits
-- Gestion des accusations multiples
-- Identification du crime principal
-- Priorisation par certitude
+./scripts/start_cli.sh

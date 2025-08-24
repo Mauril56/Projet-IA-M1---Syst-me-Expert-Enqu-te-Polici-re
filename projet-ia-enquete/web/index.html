@@ -2,48 +2,62 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Système d'Enquête Policière</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système Expert d'Enquête IA</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🔍 Système d'Enquête Policière</h1>
-        
-        <div class="section">
-            <h2>Vérification de Culpabilité</h2>
-            <div class="form-group">
-                <label for="suspectSelect">Suspect:</label>
-                <select id="suspectSelect">
-                    <option value="john">John</option>
-                    <option value="mary">Mary</option>
-                    <option value="alice">Alice</option>
-                    <option value="bruno">Bruno</option>
-                    <option value="sophie">Sophie</option>
-                </select>
+        <header>
+            <h1>🔍 Système Expert d'Enquête IA</h1>
+            <p class="subtitle">Intelligence Artificielle Symbolique pour enquêtes judiciaires</p>
+        </header>
+
+        <div class="control-panel">
+            <div class="selection-panel">
+                <h2>🔎 Sélection</h2>
+                <div class="form-group">
+                    <label for="suspectSelect">Suspect:</label>
+                    <select id="suspectSelect">
+                        <option value="">Choisir un suspect</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="crimeSelect">Crime:</label>
+                    <select id="crimeSelect">
+                        <option value="">Choisir un crime</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="proofSelect">Preuve hypothétique:</label>
+                    <select id="proofSelect">
+                        <option value="">Choisir une preuve</option>
+                        <option value="motive">Motif criminel</option>
+                        <option value="presence">Présence sur les lieux</option>
+                        <option value="fingerprints">Empreintes digitales</option>
+                        <option value="witness">Témoin oculaire</option>
+                        <option value="transaction">Transaction bancaire</option>
+                        <option value="fake_id">Fausse identité</option>
+                    </select>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="crimeSelect">Crime:</label>
-                <select id="crimeSelect">
-                    <option value="vol">Vol</option>
-                    <option value="assassinat">Assassinat</option>
-                    <option value="escroquerie">Escroquerie</option>
-                </select>
+
+            <div class="action-panel">
+                <h2>⚡ Actions</h2>
+                <button id="analyzeBtn">Analyser le suspect</button>
+                <button id="hypothesisBtn">Scénario hypothétique</button>
+                <button id="proofTreeBtn">Arbre de preuves</button>
+                <button class="btn-danger" onclick="resetAll()">Réinitialiser</button>
             </div>
-            
-            <button onclick="checkGuilt()">Vérifier la culpabilité</button>
-            <div id="result" class="result"></div>
         </div>
 
-        <div class="section">
-            <h2>Rapport Complet</h2>
-            <button onclick="generateReport()">Générer le rapport complet</button>
-            <pre id="report" class="report"></pre>
-        </div>
-
-        <div class="section">
-            <h2>Statistiques</h2>
-            <div id="stats" class="stats"></div>
+        <div class="results">
+            <h2>📊 Résultats</h2>
+            <div id="result"></div>
+            <div id="hypothesisResult"></div>
+            <div id="proofTree"></div>
         </div>
     </div>
 
