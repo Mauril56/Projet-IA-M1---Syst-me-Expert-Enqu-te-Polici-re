@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔍 Enquête Criminelle</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Enquête Criminelle</h1>
+    <p>Remplissez les informations pour analyser un crime.</p>
+
+    <form id="crimeForm">
+      <!-- Type de crime -->
+      <label for="crimeType">Type de Crime :</label>
+      <select id="crimeType" required>
+        <option value="">Sélectionnez un type...</option>
+        <option value="meurtre">Meurtre</option>
+        <option value="vol">Vol</option>
+        <option value="escroquerie">Escroquerie</option>
+        <option value="viol">Viol</option>
+      </select>
+
+      <!-- Victimes -->
+      <div class="victims-section" id="victimsSection">
+        <h2>👤 Victimes</h2>
+        <div class="victim-input">
+          <input type="text" class="victim-name" placeholder="Nom de la victime" required>
+          <select class="victim-sex" required>
+            <option value="">Sexe...</option>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+            <option value="autre">Autre</option>
+          </select>
+          <input type="number" class="victim-age" placeholder="Âge" min="0" required>
+          <select class="victim-marital" required>
+            <option value="">Statut marital...</option>
+            <option value="marie">Marié</option>
+            <option value="celibataire">Célibataire</option>
+          </select>
+
+          <!-- Spécifique Meurtre -->
+          <div class="death-time" style="display:none; grid-column: span 2;">
+            <input type="time" class="victim-death-time" placeholder="Heure du décès">
+          </div>
+
+          <!-- Spécifique Escroquerie -->
+          <div class="victim-fraud" style="display:none; grid-column: span 2;">
+            <input type="number" class="victim-loss" placeholder="Montant escroqué">
+            <select class="victim-method" required>
+                <option value="">Mode opératoire...</option>
+                <option value="phishing">Phishing</option>
+                <option value="arnaque_telephone">Arnaque par téléphone</option>
+                <option value="faux_site">Faux site web</option>
+                <option value="cheque_frauduleux">Chèque frauduleux</option>
+                <option value="autre">Autre</option>
+            </select>
+        </div>
+        </div>
+        <button type="button" id="addVictim">➕ Ajouter une autre victime</button>
+      </div>
+
+      <!-- Suspects -->
+      <div class="suspects-section" id="suspectsSection">
+        <h2>🕵️‍♂️ Suspects</h2>
+        <div class="suspect-input">
+          <input type="text" class="suspect-name" placeholder="Nom du suspect" required>
+          <input type="number" class="suspect-age" placeholder="Âge" min="0" required>
+          <select class="suspect-sex" required>
+            <option value="">Sexe...</option>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+            <option value="autre">Autre</option>
+          </select>
+          <select class="suspect-relation" required>
+            <option value="">Relation avec la victime...</option>
+            <option value="ami">Ami</option>
+            <option value="employeur">Employeur</option>
+            <option value="dette">Dette</option>
+            <option value="employee">Employé</option>
+          </select>
+          <select class="suspect-distance" required>
+            <option value="">Distance...</option>
+            <option value="pret">Près</option>
+            <option value="loin">Loin</option>
+          </select>
+          <select class="suspect-arme" required>
+            <option value="">Possède une arme...</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+          </select>
+          <select class="suspect-empreinte-lieu" required>
+            <option value="">Empreinte sur le lieu...</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+          </select>
+          <select class="suspect-empreinte-arme" required>
+            <option value="">Empreinte sur l'arme...</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+          </select>
+        </div>
+        <button type="button" id="addSuspect">➕ Ajouter un autre suspect</button>
+      </div>
+
+      <!-- Bouton soumission -->
+      <button type="submit">📨 Verifier</button>
+    </form>
+  </div>
+
+  <!-- Modal résultat -->
+  <div id="resultModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>🔎 Résultat de l'analyse</h2>
+      <div id="modalResult"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
